@@ -7,7 +7,7 @@ import ResultModal from '@/components/ResultModal';
 import { toJpeg, toPng } from 'html-to-image';
 
 export default function Home() {
-  const [backgroundColor, setBackgroundColor] = useState('#f038da');
+  const [backgroundColor, setBackgroundColor] = useState('#dcfcff');
   const [aspectRatio, setAspectRatio] = useState('1/1');
   
   // Text state

@@ -13,6 +13,8 @@ interface SettingsPanelProps {
   setHAlign: (val: string) => void;
   fontFamily: string;
   setFontFamily: (val: string) => void;
+  textColor: string;
+  setTextColor: (val: string) => void;
   letterSpacing: number;
   setLetterSpacing: (val: number) => void;
   lineHeight: number;
@@ -34,6 +36,8 @@ export default function SettingsPanel({
   setHAlign,
   fontFamily,
   setFontFamily,
+  textColor,
+  setTextColor,
   letterSpacing,
   setLetterSpacing,
   lineHeight,
@@ -43,12 +47,12 @@ export default function SettingsPanel({
   generateImage,
   isGenerating,
 }: SettingsPanelProps) {
-  const handleHexChange = (e: ChangeEvent<HTMLInputElement>) => {
+  const handleHexChange = (e: ChangeEvent<HTMLInputElement>, setter: (val: string) => void) => {
     let val = e.target.value;
     if (!val.startsWith('#') && val.length > 0) {
       val = '#' + val;
     }
-    setBackgroundColor(val);
+    setter(val);
   };
 
   const ratios = [
@@ -83,7 +87,7 @@ export default function SettingsPanel({
                 <input
                   type="text"
                   value={backgroundColor}
-                  onChange={handleHexChange}
+                  onChange={(e) => handleHexChange(e, setBackgroundColor)}
                   className="w-full pl-3 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none transition-all text-gray-700 font-mono text-sm shadow-sm"
                   placeholder="#dcfcff"
                 />
@@ -149,6 +153,33 @@ export default function SettingsPanel({
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
                   <path d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" />
                 </svg>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-3">
+            <label className="text-xs font-semibold text-gray-700 flex items-center gap-2">
+              <div className="w-3.5 h-3.5 rounded-full bg-gray-800" />
+              글자 색상
+            </label>
+            <div className="flex gap-2.5">
+              <div className="relative flex-1">
+                <input
+                  type="text"
+                  value={textColor}
+                  onChange={(e) => handleHexChange(e, setTextColor)}
+                  className="w-full pl-3 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none transition-all text-gray-700 font-mono text-sm shadow-sm"
+                  placeholder="#455264
+                  "
+                />
+              </div>
+              <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-gray-200 shadow-sm shrink-0 cursor-pointer flex items-center justify-center bg-white hover:border-gray-300 transition-colors">
+                <input
+                  type="color"
+                  value={textColor.match(/^#[0-9A-Fa-f]{6}$/i) ? textColor : '#000000'}
+                  onChange={(e) => setTextColor(e.target.value)}
+                  className="absolute w-[200%] h-[200%] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer border-0 p-0 m-0"
+                />
               </div>
             </div>
           </div>

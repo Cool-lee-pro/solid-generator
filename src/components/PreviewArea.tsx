@@ -27,7 +27,7 @@ export default function PreviewArea({
   lineHeight,
 }: PreviewAreaProps) {
   // Validate hex color roughly to prevent invalid CSS injection
-  const validColor = backgroundColor.match(/^#[0-9A-Fa-f]{3,8}$/i) ? backgroundColor : '#f038da';
+  const validColor = backgroundColor.match(/^#[0-9A-Fa-f]{3,8}$/i) ? backgroundColor : '#dcfcff';
 
   const editor = useEditor({
     extensions: [
