@@ -87,8 +87,8 @@ export default function PreviewArea({
             }}
           >
             {editor && (
-              <BubbleMenu editor={editor} tippyOptions={{ duration: 100, zIndex: 9999 }}>
-                <div className="flex bg-gray-900/90 backdrop-blur-md shadow-xl rounded-xl border border-white/10 overflow-hidden text-white p-1.5 gap-1.5">
+              <BubbleMenu editor={editor} className="z-50 shadow-xl rounded-xl overflow-hidden">
+                <div className="flex bg-gray-900/90 backdrop-blur-md border border-white/10 text-white p-1.5 gap-1.5">
                   <button
                     onClick={() => editor.chain().focus().toggleBold().run()}
                     className={`p-1.5 rounded-lg transition-colors ${editor.isActive('bold') ? 'bg-white/20 text-white' : 'text-gray-300 hover:bg-white/10 hover:text-white'}`}
