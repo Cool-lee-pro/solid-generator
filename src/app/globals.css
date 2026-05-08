@@ -1,3 +1,37 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
+@import url("https://cdn.jsdelivr.net/font-iropke-batang/1.2/font-iropke-batang.css");
+
+@font-face {
+    font-family: 'ChosunGs';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGs.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunKm';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunKm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunGu';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.0/ChosunGu.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunKg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunKg.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'ChosunSm';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@1.1/ChosunSm.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 @import "tailwindcss";
 
 :root {
@@ -10,6 +44,40 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-pretendard: "Pretendard", sans-serif;
+  --font-iropke: "Iropke Batang", serif;
+  --font-chosun-gs: "ChosunGs", serif;
+  --font-chosun-km: "ChosunKm", serif;
+  --font-chosun-gu: "ChosunGu", sans-serif;
+  --font-chosun-kg: "ChosunKg", sans-serif;
+  --font-chosun-sm: "ChosunSm", serif;
+}
+
+.ProseMirror:focus {
+  outline: none;
+}
+.ProseMirror p {
+  margin: 0;
+  margin-bottom: 0.5em;
+}
+.ProseMirror h1, .ProseMirror h2, .ProseMirror h3 {
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+.ProseMirror h1 { font-size: 1.5em; }
+.ProseMirror h2 { font-size: 1.25em; }
+.ProseMirror strong {
+  font-weight: 800;
+}
+.ProseMirror em {
+  font-style: italic;
+}
+.ProseMirror u {
+  text-decoration: underline;
+}
+.ProseMirror mark {
+  background-color: var(--highlight-color, rgba(255, 255, 0, 0.4));
+  color: inherit;
 }
 
 @media (prefers-color-scheme: dark) {
