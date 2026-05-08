@@ -85,7 +85,7 @@ export default function SettingsPanel({
                   value={backgroundColor}
                   onChange={handleHexChange}
                   className="w-full pl-3 pr-3 py-2 border border-gray-200 rounded-xl focus:ring-2 focus:ring-purple-500/20 focus:border-purple-500 outline-none transition-all text-gray-700 font-mono text-sm shadow-sm"
-                  placeholder="#f038da"
+                  placeholder="#dcfcff"
                 />
               </div>
               <div className="relative w-10 h-10 rounded-xl overflow-hidden border border-gray-200 shadow-sm shrink-0 cursor-pointer flex items-center justify-center bg-white hover:border-gray-300 transition-colors">
