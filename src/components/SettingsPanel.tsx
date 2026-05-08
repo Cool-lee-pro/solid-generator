@@ -1,5 +1,6 @@
 import { ChangeEvent } from 'react';
 import { PaintBucket, Maximize, Type, AlignCenter, SlidersHorizontal, Image as ImageIcon, Download } from 'lucide-react';
+import CoupangAd from './CoupangAd';
 
 interface SettingsPanelProps {
   backgroundColor: string;
@@ -280,6 +281,11 @@ export default function SettingsPanel({
               </>
             )}
           </button>
+        </div>
+        
+        {/* Ad Section */}
+        <div className="pt-2 pb-4">
+          <CoupangAd />
         </div>
       </div>
     </div>
